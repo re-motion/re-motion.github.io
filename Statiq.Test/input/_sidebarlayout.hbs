@@ -1,0 +1,65 @@
+﻿<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo"><img src="/images/re-motion_White_RGB_260x50.png" alt="re-motion logo" style="vertical-align: middle" /></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        {{#each menuitems}}
+            <li><a href="{{url}}">{{name}}</a></li>
+        {{/each}}
+        </ul>
+    </div>
+</nav>
+
+<div class="row">
+    <div class="col s3">
+        <!-- Grey navigation panel -->
+        <ul class="collection with-header">
+            <li class="collection-header"><b>Basics</b></li>
+            <li class="collection-item"><a href="https://re-motion.atlassian.net/">Issue tracker</a></li>
+            <li class="collection-item"><a href="https://nuget.re-motion.org/nuget/re-motion-release/">NuGet feed</a></li>
+            <li class="collection-item"><a href="https://re-motion.atlassian.net/wiki/display/RM/Home">Wiki</a></li>
+        </ul>
+        <ul class="collection with-header">
+            <li class="collection-header"><b>Blogs</b></li>
+            {{#each blogs}}
+            <li class="collection-item"><a href="{{url}}">{{name}}</a></li>
+            {{/each}}
+        </ul>
+        <ul class="collection with-header">
+            <li class="collection-header"><b>Discussion lists</b></li>
+            <li class="collection-item"><a href="https://groups.google.com/group/re-motion-announce?hl=en">re-motion-announce</a></li>
+            <li class="collection-item"><a href="https://groups.google.com/group/re-motion-users?hl=en">re-motion-users</a></li>
+        </ul>
+        <ul class="collection with-header">
+            <li class="collection-header"><b>Documentation</b></li>
+            <li class="collection-item"><a href="https://www.re-motion.org/download/HOL_reform.pdf">Hands on Lab – re-form</a></li>
+            <li class="collection-item"><a href="https://www.re-motion.org/download/HOL_mixin_equals.pdf">Hands on Lab – re-mix</a></li>
+            <li class="collection-item"><a href="https://www.re-motion.org/download/HOL_restore.pdf">Hands on Lab – re-store</a></li>
+        </ul>
+        <ul class="collection with-header">
+            <li class="collection-header"><b>Spin-off projects</b></li>
+            <li class="collection-item"><a href="https://github.com/re-motion/Relinq">re-linq @ GitHub</a></li>
+            <li class="collection-item"><a href="https://github.com/re-motion/Remix">re-mix @ GitHub</a></li>
+            <li class="collection-item"><a href="https://github.com/re-motion/TypePipe">TypePipe @ GitHub</a></li>
+        </ul>
+        <ul class="collection with-header">
+            <li class="collection-header"><b>Team ressources</b></li>
+            <li class="collection-item"><a href="https://github.com/re-motion">GitHub</a></li>
+            <li class="collection-item"><a href="https://www.openhub.net/p/re-motion">Open HUB</a></li>
+            <li class="collection-item"><a href="https://groups.google.com/group/re-motion-dev?hl=en">re-motion-dev (developers list)</a></li>
+            <li class="collection-item"><a href="https://svn.re-motion.org/svn/Remotion">Subversion repository</a></li>
+        </ul>
+    </div>
+
+    <div class="col s9">
+        <!-- Teal page content  -->
+        {{{content}}}
+    </div>
+
+</div>
+
+<footer class="page-footer">
+    <div class="footer-copyright">
+        © 2021 re-motion
+        <a class="grey-text text-lighten-4 right" href="https://re-motion.org/">re-motion.org</a>
+    </div>
+</footer>
