@@ -192,3 +192,6 @@ GitExtensions.settings.backup
 # Do not ignore TypeScript build config directories
 !**/tsconfig/[Dd]ebug
 !**/tsconfig/[Rr]elease
+
+# Statiq
+output/

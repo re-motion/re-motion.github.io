@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>@Document.GetString("title")</title>
+</head>
+<body>
+@RenderBody()
+@Document.GetString("body")
+@for (int c = 0; c < 5; c++)
+{
+  <p>@c</p>
+}
+</body>
+</html>
