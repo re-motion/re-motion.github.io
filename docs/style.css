@@ -1,0 +1,42 @@
+div#page
+{
+  display: grid;
+  grid-template-areas:
+    "links header"
+    "links navigation"
+    "links main"
+    "footer main";
+  grid-template-rows: 4em max-content 1fr max-content;
+  grid-template-columns: 20% 1fr;
+  width: 100%;
+}
+
+header
+{
+  background-color: aqua;
+  grid-area: header;
+}
+
+footer
+{
+  background-color: azure;
+  grid-area: footer;
+}
+
+nav#navigation
+{
+  background-color: beige;
+  grid-area: navigation;
+}
+
+nav#links
+{
+  background-color: cadetblue;
+  grid-area: links;
+}
+
+main
+{
+  background-color: wheat;
+  grid-area: main;
+}

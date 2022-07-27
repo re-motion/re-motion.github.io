@@ -2,8 +2,71 @@
 <html>
   <head>
     <title>{{ page.title }}</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
   </head>
   <body>
-    {{ content }}
+    <div id="page">
+      <header>
+        <img src="re-motion_White_RGB_260x50.png" />
+        <h1>{{ page.title }}</h1>
+      </header>
+
+      <nav id="navigation">
+        <h2>Site Navigation</h2>
+        <ul>
+          <li><a href="Overview.html">Overview</a></li>
+          <li><a href="why_re-motion.html">Why re-motion</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="license.html">License</a></li>
+        </ul>
+      </nav>
+
+      <main>
+      {{ content }}
+      </main>
+
+      <nav id="links">
+        <h2>Links for working with re-motion</h2>
+
+        <h3>Basics</h3>
+        <ul>
+          <li><a href="https://github.com/re-motion/Framework/">Framework @ Github</a></li>
+          <li><a href="https://re-motion.atlassian.net/">Issue tracker</a></li>
+          <li><a href="https://nuget.re-motion.org/nuget/re-motion-release/">NuGet feed</a></li>
+          <li><a href="https://re-motion.atlassian.net/wiki/display/RM/Home">Wiki</a></li>
+        </ul>
+
+        <h3>Discussion lists</h3>
+        <ul>
+            <li><a href="https://groups.google.com/group/re-motion-announce?hl=en">re-motion-announce</a></li>
+            <li><a href="https://groups.google.com/group/re-motion-users?hl=en">re-motion-users</a></li>
+        </ul>
+
+        <h3>Documentation</h3>
+        <ul>
+            <li><a href="https://raw.githubusercontent.com/re-motion/Samples-HOL-ReForm/master/HOL_reform.pdf">Hands on Lab – re-form</a></li>
+            <li><a href="https://raw.githubusercontent.com/re-motion/Samples-HOL-Mixins/master/equals/HOL_mixin_equals.pdf">Hands on Lab – re-mix</a></li>
+            <li><a href="https://raw.githubusercontent.com/re-motion/Samples-HOL-ReStore/master/HOL_restore.pdf">Hands on Lab – re-store</a></li>
+            <li><a href="https://github.com/re-motion/Relinq/wiki/Technical-Articles">Wiki – re-linq/a></li>
+            <li><a href="https://github.com/re-motion/Remix/wiki/Technical-Articles">Wiki – re-mix</a></li>
+        </ul>
+
+        <h3>Spin-off projects</h3>
+        <ul>
+            <li><a href="https://github.com/re-motion/Relinq">re-linq @ GitHub</a></li>
+            <li><a href="https://github.com/re-motion/Remix">re-mix @ GitHub</a></li>
+            <li><a href="https://github.com/re-motion/TypePipe">TypePipe @ GitHub</a></li>
+        </ul>
+
+        <h3>Team resources</h3>
+        <ul>
+            <li><a href="https://github.com/re-motion">GitHub</a></li>
+            <li><a href="https://www.openhub.net/p/re-motion">Open HUB</a></li>
+            <li><a href="https://groups.google.com/group/re-motion-dev?hl=en">re-motion-dev (developers list)</a></li>
+        </ul>
+      </nav>
+
+      <footer>www.re-motion.org</footer>
+    </div>
   </body>
 </html>
