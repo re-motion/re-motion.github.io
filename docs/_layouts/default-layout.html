@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>{{ page.title }}</title>
     <link href="style.css" type="text/css" rel="stylesheet">
@@ -7,11 +7,11 @@
   <body>
     <div id="page">
       <header>
-        <img src="re-motion_White_RGB_260x50.png" />
+        <img src="re-motion_White_RGB_260x50.png" alt="re-motion.org" />
       </header>
 
-      <nav id="navigation">
-        <h2>Site Navigation</h2>
+      <nav id="navigation" aria-labelledby="navigation-heading">
+        <h2 id="navigation-heading">Site Navigation</h2>
         <ul>
           <li><a href="Overview.html">Overview</a></li>
           <li><a href="why_re-motion.html">Why re-motion</a></li>
@@ -20,8 +20,8 @@
         </ul>
       </nav>
 
-      <nav id="links">
-        <h2>Links for working with re-motion</h2>
+      <nav id="links" aria-labelledby="links-heading">
+        <h2 id="links-heading">Links for working with re-motion</h2>
 
         {% include links.html %}
       </nav>
