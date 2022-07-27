@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="page">
+      <header>
+        <img src="re-motion_White_RGB_260x50.png" alt="re-motion.org" />
+      </header>
+
+      <nav id="navigation" aria-label="Site Navigation">
+        <ul>
+          <li><a href="overview.html" {% if page.name == 'overview.md' %} class="current" {% endif %}>Overview</a></li>
+          <li><a href="why_re-motion.html" {% if page.name == 'why_re-motion.md' %} class="current" {% endif %}>Why re-motion</a></li>
+          <li><a href="faq.html" {% if page.name == 'faq.md' %} class="current" {% endif %}>FAQ</a></li>
+          <li><a href="license.html" {% if page.name == 'license.md' %} class="current" {% endif %}>License</a></li>
+        </ul>
+      </nav>
+
+      <nav id="sidebar" aria-label="Links for working with re-motion">
+        {% include sidebar-links.html %}
+      </nav>
+
+      <main>
+        {{ content }}
+      </main>
+
+      <footer>{{ site.title }}</footer>
+    </div>
+  </body>
+</html>

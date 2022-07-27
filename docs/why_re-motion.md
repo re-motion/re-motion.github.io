@@ -1,3 +1,6 @@
+---
+layout: default-layout
+---
 # Why re-motion
 
 ## Focus on the domain

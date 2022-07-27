@@ -1,3 +1,6 @@
+---
+layout: default-layout
+---
 # FAQ
 
 re-motion Frequently Asked Questions

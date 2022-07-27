@@ -1,0 +1,221 @@
+:root
+{
+  --font-family-body: Verdana, Helvetica, sans-serif;
+  --font-family-heading: "Times New Roman", Times, serif;
+  --sidebar-color-background: #262626;
+  --sidebar-color-contrast: #333333;
+  --sidebar-color-contrast-light: #999999;
+  --sidebar-color-foreground: #FFFFFF;
+  --main-color-background: #FFFFFF;
+  --main-color-contrast: #DDDDDD;
+  --main-color-foreground: #000000;
+  --header-color-background: #AA0000;
+  --header-color-contrast: #EE0000;
+  --header-color-foreground: #EEEEEE;
+  --spacing-small: 0.5em;
+  --spacing-normal: 1em;
+  --spacing-large: 2em;
+}
+
+body
+{
+  font-family: var(--font-family-body);
+  font-size: 0.8em;
+  margin: 0;
+  padding: 0;
+}
+
+div#page
+{
+  display: grid;
+  grid-template-areas:
+    "sidebar header"
+    "sidebar navigation"
+    "sidebar main"
+    "footer main";
+  grid-template-rows: max-content max-content 1fr max-content;
+  grid-template-columns: max-content auto;
+
+  --margin: var(--spacing-large);
+  max-width: 70em;
+  width: calc(100% - 2 * var(--margin));
+  margin: var(--margin) auto;
+
+  /* use background + padding for displaying top and bottom border 
+     because using an actual border results in a 1px layout error in Chrome 101. */
+  background-color: var(--sidebar-color-contrast);
+  padding: var(--spacing-normal) 0;
+}
+
+div#page::before
+{
+  grid-area: header / header / navigation / navigation;
+  content: '';
+  background-image: linear-gradient(var(--header-color-contrast), var(--header-color-background));
+}
+
+header
+{
+  grid-area: header;
+  background-image: none;
+  padding: var(--spacing-large);
+}
+
+footer
+{
+  grid-area: footer;
+  background-image: linear-gradient(var(--header-color-contrast), var(--header-color-background));
+  color: var(--header-color-foreground);
+  padding: var(--spacing-normal);
+}
+
+nav#navigation
+{
+  grid-area: navigation;
+  background-color: transparent;
+  color: var(--header-color-foreground);
+  padding: 0 var(--spacing-large);
+}
+
+nav#navigation a
+{
+  color: var(--header-color-foreground);
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  padding-bottom: var(--spacing-normal);
+}
+
+nav#navigation a:hover::before,
+nav#navigation a.current::before
+{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  --triangle-width: 1em;
+  left: calc(50% - (var(--triangle-width) / 2));
+  width: var(--triangle-width);
+	height: calc(var(--triangle-width) * 2 / 3);
+	background: var(--main-color-background);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+nav#navigation ul
+{
+  display: flex;
+  gap: var(--spacing-large);
+  margin: 0;
+  padding: 0;
+}
+
+nav#navigation li
+{
+  list-style: none;
+}
+
+
+nav#sidebar
+{
+  grid-area: sidebar;
+  background-color: var(--sidebar-color-background);
+  color: var(--sidebar-color-foreground);
+  white-space: nowrap;
+}
+
+nav#sidebar > ul
+{
+  padding: 0;
+}
+
+nav#sidebar > ul > li 
+{
+  margin: var(--spacing-normal);
+}
+
+nav#sidebar > ul > li > span.group-heading
+{
+  color: var(--sidebar-color-foreground);
+  font-family: var(--font-family-heading);
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: var(--sidebar-color-contrast);
+  display: block;
+  margin-bottom: 2px;
+  padding: calc(var(--spacing-small) / 2) var(--spacing-small);
+}
+
+nav#sidebar > ul > li
+{
+  list-style: none;
+}
+
+nav#sidebar > ul > li > ul
+{
+  border-color: var(--sidebar-color-contrast);
+  border-style: solid;
+  border-width: 2px;
+  padding: calc(var(--spacing-small) / 2) var(--spacing-small);
+}
+
+nav#sidebar > ul > li > ul > li
+{
+  list-style: square inside;
+  color: var(--sidebar-color-contrast-light);
+  padding: calc(var(--spacing-small) / 2);
+}
+
+nav#sidebar > ul > li > ul > li:hover
+{
+  background-color: var(--sidebar-color-contrast);
+}
+
+nav#sidebar > ul > li > ul > li a
+{
+  color: var(--sidebar-color-foreground);
+  text-decoration: none;
+  display: inline-block;
+  --space-for-list-item: 1.5em;
+  width: calc(100% - var(--space-for-list-item));
+}
+
+nav#sidebar > ul > li > ul > li:hover a
+{
+  color: var(--sidebar-color-contrast-light);
+}
+
+
+main
+{
+  grid-area: main;
+  background-color: var(--main-color-background);
+  color: var(--main-color-foreground);
+  padding: var(--spacing-large);
+  border-right: 1px solid var(--main-color-contrast);
+}
+
+main h1
+{
+  font-family: var(--font-family-heading);
+  font-size: 1.9em;
+  font-weight: normal;
+  color: var(--header-color-contrast);
+  margin: 0;
+  margin-bottom: var(--spacing-small);
+  padding-top: var(--spacing-small);
+  border-top: 1px solid var(--main-color-contrast);
+}
+
+main h2
+{
+  font-family: var(--font-family-body);
+  font-size: 1.25em;
+  font-weight: bold;
+  color: var(--main-color-foreground);
+  margin: var(--spacing-large) 0 var(--spacing-normal) 0;
+}
+
+main a
+{
+  color: var(--header-color-contrast);
+}

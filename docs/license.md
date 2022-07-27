@@ -1,3 +1,6 @@
+---
+layout: default-layout
+---
 # License
 
 ## Overview
@@ -29,4 +32,4 @@ If the terms of the AGPL don’t work out for you, commercial licensing is avail
 
 ## Contributing
 
-If you want to contribute to re-motion, please refer to [this page](https://www.re-motion.org/web/?page_id=82) for information about providing Contributor Assignment Agreements.
+If you want to contribute to re-motion, please refer to [this page](caa.md) for information about providing Contributor Assignment Agreements.

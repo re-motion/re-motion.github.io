@@ -1,3 +1,6 @@
+---
+layout: default-layout
+---
 # Contributor Assignment Agreement
 
 ## Agreement
