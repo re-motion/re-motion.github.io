@@ -1,3 +1,23 @@
+:root
+{
+  --font-family-body: Verdana, Helvetica, sans-serif;
+  --font-family-heading: "Times New Roman", Times, serif;
+  --sidebar-color-background: #262626;
+  --sidebar-color-contrast: #333333;
+  --sidebar-color-foreground: #FFFFFF;
+}
+
+body
+{
+  font-family: var(--font-family-body);
+  font-size: 0.8em;
+}
+
+a
+{
+  text-decoration: none;
+}
+
 div#page
 {
   display: grid;
@@ -7,7 +27,7 @@ div#page
     "sidebar main"
     "footer main";
   grid-template-rows: 4em max-content 1fr max-content;
-  grid-template-columns: 20% 1fr;
+  grid-template-columns: minmax(20em, max-content) 1fr;
   width: 100%;
 }
 
@@ -29,14 +49,88 @@ nav#navigation
   grid-area: navigation;
 }
 
-nav#sidebar
-{
-  background-color: whitesmoke;
-  grid-area: sidebar;
-}
-
 main
 {
   background-color: wheat;
   grid-area: main;
+}
+
+
+nav#navigation ul
+{
+  display: flex;
+  gap: 2em;
+  padding: 0;
+}
+
+nav#navigation li
+{
+  list-style: none;
+}
+
+
+nav#sidebar
+{
+  grid-area: sidebar;
+  background-color: var(--sidebar-color-background);
+  color: var(--sidebar-color-foreground);
+  padding: 0.5em;
+}
+
+nav#sidebar > ul
+{
+  padding: 0;
+}
+
+nav#sidebar > ul > li > span.group-heading
+{
+  color: var(--sidebar-color-foreground);
+  font-family: var(--font-family-heading);
+  font-size: 1.2em;
+  font-weight: bold;
+  background-color: var(--sidebar-color-contrast);
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 2px;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+}
+
+nav#sidebar > ul > li
+{
+  list-style: none;
+}
+
+nav#sidebar > ul > li > ul
+{
+  border-color: var(--sidebar-color-contrast);
+  border-style: solid;
+  border-width: 2px;
+  padding: 0.25em;
+}
+
+nav#sidebar > ul > li > ul > li
+{
+  list-style: square inside;
+  color: #999999;
+  padding: 0.25em;
+}
+
+nav#sidebar > ul > li > ul > li:hover
+{
+  background-color: var(--sidebar-color-contrast);
+}
+
+nav#sidebar > ul > li > ul > li a
+{
+  color: var(--sidebar-color-foreground);
+  display: inline-block;
+  width: calc(100% - 1.5em);
+}
+
+nav#sidebar > ul > li > ul > li:hover a
+{
+  color: #999999;
 }
