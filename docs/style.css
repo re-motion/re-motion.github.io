@@ -78,6 +78,20 @@ nav#navigation a
   text-decoration: none;
   display: inline-block;
   padding-bottom: 1em;
+  position: relative;
+}
+
+nav#navigation a:hover::before,
+nav#navigation a.current::before
+{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - (1em / 2));
+  width: 1em;
+	height: 0.66em;
+	background: var(--header-color-foreground);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
 nav#navigation ul
