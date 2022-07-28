@@ -5,6 +5,11 @@
   --sidebar-color-background: #262626;
   --sidebar-color-contrast: #333333;
   --sidebar-color-foreground: #FFFFFF;
+  --main-color-background: #FFFFFF;
+  --main-color-foreground: #000000;
+  --header-color-background: #AA0000;
+  --header-color-contrast: #EE0000;
+  --header-color-foreground: #EEEEEE;
 }
 
 body
@@ -26,15 +31,19 @@ div#page
     "sidebar navigation"
     "sidebar main"
     "footer main";
-  grid-template-rows: 4em max-content auto max-content;
+  grid-template-rows: max-content max-content 1fr max-content;
   grid-template-columns: max-content auto;
   width: 100%;
 }
 
 header
 {
-  background-color: aqua;
   grid-area: header;
+  background-image: linear-gradient(var(--header-color-contrast), var(--header-color-background));
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
 }
 
 footer
@@ -45,16 +54,17 @@ footer
 
 nav#navigation
 {
-  background-color: beige;
   grid-area: navigation;
+  background-color: var(--header-color-background);
+  color: var(--header-color-foreground);
+  padding: 0 2em;
 }
 
-main
+nav#navigation a
 {
-  background-color: wheat;
-  grid-area: main;
+  color: var(--header-color-foreground);
+  font-weight: bold;
 }
-
 
 nav#navigation ul
 {
@@ -134,4 +144,36 @@ nav#sidebar > ul > li > ul > li a
 nav#sidebar > ul > li > ul > li:hover a
 {
   color: #999999;
+}
+
+
+main
+{
+  grid-area: main;
+  background-color: var(--main-color-background);
+  color: var(--main-color-foreground);
+  margin: 2em;
+}
+
+main h1
+{
+  font-family: var(--font-family-heading);
+  font-size: 1.9em;
+  font-weight: normal;
+  color: #EE0000;
+  margin: 1rem 0;
+}
+
+main h2
+{
+  font-family: var(--font-family-body);
+  font-size: 1em;
+  font-weight: bold;  
+  margin: 0;
+}
+
+main a
+{
+  color: #EE0000;
+  text-decoration: none;
 }
