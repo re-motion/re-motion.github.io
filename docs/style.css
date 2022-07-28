@@ -6,6 +6,7 @@
   --sidebar-color-contrast: #333333;
   --sidebar-color-foreground: #FFFFFF;
   --main-color-background: #FFFFFF;
+  --main-color-contrast: #DDDDDD;
   --main-color-foreground: #000000;
   --header-color-background: #AA0000;
   --header-color-contrast: #EE0000;
@@ -16,6 +17,8 @@ body
 {
   font-family: var(--font-family-body);
   font-size: 0.8em;
+  margin: 0;
+  padding: 0;
 }
 
 a
@@ -33,13 +36,24 @@ div#page
     "footer main";
   grid-template-rows: max-content max-content 1fr max-content;
   grid-template-columns: max-content auto;
-  width: 100%;
+  width: calc(100% - 2 * 2em);
+  max-width: 70em;
+  margin: 2em auto;
+  border-top: 1em solid var(--sidebar-color-contrast);
+  border-bottom: 1em solid var(--sidebar-color-contrast);
+}
+
+div#page::before
+{
+  grid-area: header / header / navigation / navigation;
+  content: '';
+  background-image: linear-gradient(var(--header-color-contrast), var(--header-color-background));
 }
 
 header
 {
   grid-area: header;
-  background-image: linear-gradient(var(--header-color-contrast), var(--header-color-background));
+  background-image: none;
   padding-left: 2em;
   padding-right: 2em;
   padding-top: 2em;
@@ -48,14 +62,16 @@ header
 
 footer
 {
-  background-color: azure;
   grid-area: footer;
+  background-image: linear-gradient(var(--header-color-contrast), var(--header-color-background));
+  color: var(--header-color-foreground);
+  padding: 1em;
 }
 
 nav#navigation
 {
   grid-area: navigation;
-  background-color: var(--header-color-background);
+  background-color: transparent;
   color: var(--header-color-foreground);
   padding: 0 2em;
 }
@@ -64,12 +80,15 @@ nav#navigation a
 {
   color: var(--header-color-foreground);
   font-weight: bold;
+  display: inline-block;
+  padding-bottom: 1em;
 }
 
 nav#navigation ul
 {
   display: flex;
   gap: 2em;
+  margin: 0;
   padding: 0;
 }
 
@@ -152,7 +171,8 @@ main
   grid-area: main;
   background-color: var(--main-color-background);
   color: var(--main-color-foreground);
-  margin: 2em;
+  padding: 2em;
+  border-right: 1px solid var(--main-color-contrast);
 }
 
 main h1
@@ -161,7 +181,10 @@ main h1
   font-size: 1.9em;
   font-weight: normal;
   color: #EE0000;
-  margin: 1rem 0;
+  margin: 0;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--main-color-contrast);
 }
 
 main h2
