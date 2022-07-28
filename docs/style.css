@@ -2,9 +2,9 @@ div#page
 {
   display: grid;
   grid-template-areas:
-    "links header"
-    "links navigation"
-    "links main"
+    "sidebar header"
+    "sidebar navigation"
+    "sidebar main"
     "footer main";
   grid-template-rows: 4em max-content 1fr max-content;
   grid-template-columns: 20% 1fr;
@@ -29,10 +29,10 @@ nav#navigation
   grid-area: navigation;
 }
 
-nav#links
+nav#sidebar
 {
   background-color: whitesmoke;
-  grid-area: links;
+  grid-area: sidebar;
 }
 
 main
