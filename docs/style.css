@@ -34,8 +34,8 @@ div#page
   width: calc(100% - 2 * 2em);
   max-width: 70em;
   margin: 2em auto;
-  border-top: 1em solid var(--sidebar-color-contrast);
-  border-bottom: 1em solid var(--sidebar-color-contrast);
+  padding: 1em 0;
+  background-color: var(--sidebar-color-contrast);
 }
 
 div#page::before
