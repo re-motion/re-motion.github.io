@@ -26,8 +26,8 @@ div#page
     "sidebar navigation"
     "sidebar main"
     "footer main";
-  grid-template-rows: 4em max-content 1fr max-content;
-  grid-template-columns: minmax(20em, max-content) 1fr;
+  grid-template-rows: 4em max-content auto max-content;
+  grid-template-columns: max-content auto;
   width: 100%;
 }
 
@@ -74,12 +74,17 @@ nav#sidebar
   grid-area: sidebar;
   background-color: var(--sidebar-color-background);
   color: var(--sidebar-color-foreground);
-  padding: 0.5em;
+  white-space: nowrap;
 }
 
 nav#sidebar > ul
 {
   padding: 0;
+}
+
+nav#sidebar > ul > li 
+{
+  margin: 1em;
 }
 
 nav#sidebar > ul > li > span.group-heading
@@ -90,12 +95,8 @@ nav#sidebar > ul > li > span.group-heading
   font-weight: bold;
   background-color: var(--sidebar-color-contrast);
   display: block;
-  margin-top: 0.5em;
   margin-bottom: 2px;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
+  padding: 0.25em 0.5em;
 }
 
 nav#sidebar > ul > li
@@ -108,7 +109,7 @@ nav#sidebar > ul > li > ul
   border-color: var(--sidebar-color-contrast);
   border-style: solid;
   border-width: 2px;
-  padding: 0.25em;
+  padding: 0.25em 0.5em;
 }
 
 nav#sidebar > ul > li > ul > li
