@@ -97,7 +97,7 @@ nav#navigation a.current::before
   left: calc(50% - (var(--triangle-width) / 2));
   width: var(--triangle-width);
 	height: calc(var(--triangle-width) * 2 / 3);
-	background: var(--header-color-foreground);
+	background: var(--main-color-background);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
 
