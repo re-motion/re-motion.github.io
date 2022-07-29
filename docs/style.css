@@ -201,9 +201,10 @@ main h1
 main h2
 {
   font-family: var(--font-family-body);
-  font-size: 1em;
-  font-weight: bold;  
-  margin: 0;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: var(--main-color-foreground);
+  margin: 1.5rem 0 1rem 0;
 }
 
 main a
