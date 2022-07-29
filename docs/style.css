@@ -4,6 +4,7 @@
   --font-family-heading: "Times New Roman", Times, serif;
   --sidebar-color-background: #262626;
   --sidebar-color-contrast: #333333;
+  --sidebar-color-contrast-light: #999999;
   --sidebar-color-foreground: #FFFFFF;
   --main-color-background: #FFFFFF;
   --main-color-contrast: #DDDDDD;
@@ -11,6 +12,9 @@
   --header-color-background: #AA0000;
   --header-color-contrast: #EE0000;
   --header-color-foreground: #EEEEEE;
+  --spacing-small: 0.5em;
+  --spacing-normal: 1em;
+  --spacing-large: 2em;
 }
 
 body
@@ -31,11 +35,16 @@ div#page
     "footer main";
   grid-template-rows: max-content max-content 1fr max-content;
   grid-template-columns: max-content auto;
-  width: calc(100% - 2 * 2em);
+
+  --margin: var(--spacing-large);
   max-width: 70em;
-  margin: 2em auto;
-  padding: 1em 0;
+  width: calc(100% - 2 * var(--margin));
+  margin: var(--margin) auto;
+
+  /* use background + padding for displaying top and bottom border 
+     because using an actual border results in a 1px layout error in Chrome 101. */
   background-color: var(--sidebar-color-contrast);
+  padding: var(--spacing-normal) 0;
 }
 
 div#page::before
@@ -49,10 +58,7 @@ header
 {
   grid-area: header;
   background-image: none;
-  padding-left: 2em;
-  padding-right: 2em;
-  padding-top: 2em;
-  padding-bottom: 2em;
+  padding: var(--spacing-large);
 }
 
 footer
@@ -60,7 +66,7 @@ footer
   grid-area: footer;
   background-image: linear-gradient(var(--header-color-contrast), var(--header-color-background));
   color: var(--header-color-foreground);
-  padding: 1em;
+  padding: var(--spacing-normal);
 }
 
 nav#navigation
@@ -68,7 +74,7 @@ nav#navigation
   grid-area: navigation;
   background-color: transparent;
   color: var(--header-color-foreground);
-  padding: 0 2em;
+  padding: 0 var(--spacing-large);
 }
 
 nav#navigation a
@@ -77,8 +83,8 @@ nav#navigation a
   font-weight: bold;
   text-decoration: none;
   display: inline-block;
-  padding-bottom: 1em;
   position: relative;
+  padding-bottom: var(--spacing-normal);
 }
 
 nav#navigation a:hover::before,
@@ -87,9 +93,10 @@ nav#navigation a.current::before
   content: '';
   position: absolute;
   bottom: 0;
-  left: calc(50% - (1em / 2));
-  width: 1em;
-	height: 0.66em;
+  --triangle-width: 1em;
+  left: calc(50% - (var(--triangle-width) / 2));
+  width: var(--triangle-width);
+	height: calc(var(--triangle-width) * 2 / 3);
 	background: var(--header-color-foreground);
   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
@@ -97,7 +104,7 @@ nav#navigation a.current::before
 nav#navigation ul
 {
   display: flex;
-  gap: 2em;
+  gap: var(--spacing-large);
   margin: 0;
   padding: 0;
 }
@@ -123,7 +130,7 @@ nav#sidebar > ul
 
 nav#sidebar > ul > li 
 {
-  margin: 1em;
+  margin: var(--spacing-normal);
 }
 
 nav#sidebar > ul > li > span.group-heading
@@ -135,7 +142,7 @@ nav#sidebar > ul > li > span.group-heading
   background-color: var(--sidebar-color-contrast);
   display: block;
   margin-bottom: 2px;
-  padding: 0.25em 0.5em;
+  padding: calc(var(--spacing-small) / 2) var(--spacing-small);
 }
 
 nav#sidebar > ul > li
@@ -148,14 +155,14 @@ nav#sidebar > ul > li > ul
   border-color: var(--sidebar-color-contrast);
   border-style: solid;
   border-width: 2px;
-  padding: 0.25em 0.5em;
+  padding: calc(var(--spacing-small) / 2) var(--spacing-small);
 }
 
 nav#sidebar > ul > li > ul > li
 {
   list-style: square inside;
-  color: #999999;
-  padding: 0.25em;
+  color: var(--sidebar-color-contrast-light);
+  padding: calc(var(--spacing-small) / 2);
 }
 
 nav#sidebar > ul > li > ul > li:hover
@@ -168,12 +175,13 @@ nav#sidebar > ul > li > ul > li a
   color: var(--sidebar-color-foreground);
   text-decoration: none;
   display: inline-block;
-  width: calc(100% - 1.5em);
+  --space-for-list-item: 1.5em;
+  width: calc(100% - var(--space-for-list-item));
 }
 
 nav#sidebar > ul > li > ul > li:hover a
 {
-  color: #999999;
+  color: var(--sidebar-color-contrast-light);
 }
 
 
@@ -182,7 +190,7 @@ main
   grid-area: main;
   background-color: var(--main-color-background);
   color: var(--main-color-foreground);
-  padding: 2em;
+  padding: var(--spacing-large);
   border-right: 1px solid var(--main-color-contrast);
 }
 
@@ -191,10 +199,10 @@ main h1
   font-family: var(--font-family-heading);
   font-size: 1.9em;
   font-weight: normal;
-  color: #EE0000;
+  color: var(--header-color-contrast);
   margin: 0;
-  margin-bottom: 1rem;
-  padding-top: 1rem;
+  margin-bottom: var(--spacing-small);
+  padding-top: var(--spacing-small);
   border-top: 1px solid var(--main-color-contrast);
 }
 
@@ -204,10 +212,10 @@ main h2
   font-size: 1.25em;
   font-weight: bold;
   color: var(--main-color-foreground);
-  margin: 1.5rem 0 1rem 0;
+  margin: var(--spacing-large) 0 var(--spacing-normal) 0;
 }
 
 main a
 {
-  color: #EE0000;
+  color: var(--header-color-contrast);
 }
