@@ -11,7 +11,7 @@ Gonzagagasse 16\
 Austria
 
 Tel: +43 1 5332555-0\
-E-Mail: office@rubicon.eu\
+E-Mail: office@rubicon.eu
 
 Company I.D: FN 216900x\
 Commercial register: Handelsgericht Wien\
